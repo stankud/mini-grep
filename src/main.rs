@@ -22,6 +22,8 @@ struct Config {
 
 impl Config {
     fn new(args: &[String]) -> Config {
+        // using clone() is less effecient, but more simple to avoid defining lifetimes
+        // might refactor later
         let query = args[1].clone();
         let file_path = args[2].clone();
 
